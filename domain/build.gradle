@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+apply from: '../dependencies.gradle'
+
+dependencies {
+
+    def domainDependencies = rootProject.ext.domainDependencies
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation domainDependencies.kotlin
+
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+}

@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    def domainDependencies = rootProject.ext.domainDependencies
+    def appDependencies = rootProject.ext.appDependencies
+
+    compileSdkVersion version_compile_sdk
+    buildToolsVersion version_build_tools
+    defaultConfig {
+        applicationId "com.example.themovieapp"
+        minSdkVersion version_min_sdk
+        targetSdkVersion version_target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation project(':data')
+    implementation project(':domain')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation appDependencies.kotlin
+    implementation appDependencies.appcompat
+    implementation appDependencies.ktx
+    implementation appDependencies.constraintLayout
+
+    //DI
+    implementation appDependencies.dagger2
+    implementation appDependencies.dagger2Android
+    kapt appDependencies.dagger2AndroidProcessor
+    kapt appDependencies.dagger2Processor
+
+
+
+
+
+
+
+    //Test Libs
+    testImplementation testDependencies.robolectric
+    testImplementation testDependencies.androidxJunit
+    testImplementation testDependencies.espressoCore
+    testImplementation testDependencies.runner
+    testImplementation testDependencies.rules
+    testImplementation testDependencies.googleTruth
+    testImplementation testDependencies.mockito
+    testImplementation testDependencies.archComponentTest
+    testImplementation testDependencies.coroutinesTest
+    testImplementation testDependencies.mockitoInline
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.rules
+    androidTestImplementation testDependencies.androidxCoreTest
+    androidTestImplementation testDependencies.mockWebServer
+    androidTestImplementation testDependencies.espressoContrib
+    androidTestImplementation testDependencies.espressoIntents
+    kaptAndroidTest testDependencies.dagger2Processor
+    kaptAndroidTest appDependencies.dagger2AndroidProcessor
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.androidxJunit
+    androidTestImplementation testDependencies.espressoCore
+}
