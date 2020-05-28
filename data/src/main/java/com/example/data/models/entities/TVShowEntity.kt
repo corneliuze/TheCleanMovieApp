@@ -1,6 +1,6 @@
-package com.example.domain.models
+package com.example.data.models.entities
 
-data class TVShowModel(
+data class TVShowEntity(
     val backdropPath: String,
     val id: Int,
     val name: String,

@@ -1,6 +1,6 @@
-package com.example.domain.models
+package com.example.data.models.entities
 
-data class MovieModel(
+data class MovieEntity(
     val backdropPath: String?,
     val id: Int?,
     val originalTitle: String?,
