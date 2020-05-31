@@ -12,6 +12,7 @@ dependencies {
     implementation dataDependencies.kotlin
     api dataDependencies.retrofit
     api dataDependencies.loggingInterceptor
+    implementation domainDependencies.gson
     implementation dataDependencies.coroutinesCore
     api dataDependencies.dagger2
     kapt dataDependencies.dagger2Processor

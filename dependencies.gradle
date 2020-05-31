@@ -68,6 +68,18 @@ ext {
 
     ]
 
+    presentationDependencies = [
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin",
+            constraintLayout       : "androidx.constraintlayout:constraintlayout:$version_constraint_layout",
+            ktx                    : 'androidx.core:core-ktx:1.2.0',
+            dagger2Processor       : "com.google.dagger:dagger-compiler:$versions_dagger",
+            dagger2                : "com.google.dagger:dagger:$versions_dagger",
+            dagger2Android         : "com.google.dagger:dagger-android:$versions_dagger",
+            dagger2AndroidProcessor: "com.google.dagger:dagger-android-processor:$versions_dagger",
+            lifecycleExtensions    : "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions",
+            appcompat              : 'androidx.appcompat:appcompat:1.1.0'
+    ]
+
     domainDependencies = [
             kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin",
             coroutinesCore  : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_kotlin_coroutines",

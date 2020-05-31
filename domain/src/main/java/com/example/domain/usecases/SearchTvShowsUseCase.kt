@@ -1,11 +1,11 @@
 package com.example.domain.usecases
 
-import com.example.domain.repository.SearchMovieRepository
+import com.example.domain.repository.SearchRepository
 import javax.inject.Inject
 
 class SearchTvShowsUseCase @Inject constructor(
-    private val searchMovieRepository: SearchMovieRepository
+    private val searchRepository: SearchRepository
 ) {
     suspend operator fun invoke(searchParams: String) =
-        searchMovieRepository.searchTvShows(searchParams)
+        searchRepository.searchTvShows(searchParams)
 }

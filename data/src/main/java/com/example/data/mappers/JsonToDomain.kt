@@ -1,14 +1,14 @@
 package com.example.data.mappers
 
-import com.example.data.models.entities.MovieEntity
-import com.example.data.models.entities.TVShowEntity
+
 import com.example.data.models.responses.MovieModelResponse
 import com.example.data.models.responses.TVShowModelResponse
+import com.example.domain.models.MovieModel
+import com.example.domain.models.TVShowModel
 
-
-internal fun List<MovieModelResponse>.toMovieEntity(): List<MovieEntity> {
+internal fun List<MovieModelResponse>.toMovieDomain(): List<MovieModel> {
     return map {
-        MovieEntity(
+        MovieModel(
             it.backdropPath,
             it.id,
             it.originalTitle,
@@ -19,9 +19,9 @@ internal fun List<MovieModelResponse>.toMovieEntity(): List<MovieEntity> {
     }
 }
 
-internal fun List<TVShowModelResponse>.toTvShowEntity(): List<TVShowEntity> {
+internal fun List<TVShowModelResponse>.toTvShowDomain(): List<TVShowModel> {
     return map {
-        TVShowEntity(
+        TVShowModel(
             it.backdropPath,
             it.id,
             it.name,
@@ -31,3 +31,4 @@ internal fun List<TVShowModelResponse>.toTvShowEntity(): List<TVShowEntity> {
         )
     }
 }
+

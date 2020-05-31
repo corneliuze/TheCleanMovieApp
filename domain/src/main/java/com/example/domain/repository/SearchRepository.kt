@@ -4,7 +4,7 @@ import com.example.domain.models.MovieModel
 import com.example.domain.models.TVShowModel
 import kotlinx.coroutines.flow.Flow
 
-interface SearchMovieRepository {
+interface SearchRepository {
 
     suspend fun searchMovies(params: String) : Flow<List<MovieModel>>
 
